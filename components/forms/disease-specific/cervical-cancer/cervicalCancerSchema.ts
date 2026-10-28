@@ -1,0 +1,27 @@
+import * as Yup from "yup";
+
+export const cervicalCancerSchema = Yup.object().shape({
+  menarche_age: Yup.number().typeError("Must be a number").nullable(),
+  marriage_age: Yup.number().typeError("Must be a number").nullable(),
+  first_intimate_relationship_age: Yup.number().typeError("Must be a number").nullable(),
+  family_planning_methods: Yup.array().of(Yup.string()),
+  family_planning_duration: Yup.string(),
+  pregnancy_count: Yup.number().typeError("Must be a number").nullable(),
+  miscarriage: Yup.string(),
+  miscarriage_details: Yup.string(),
+  stillbirth: Yup.string(),
+  stillbirth_details: Yup.string(),
+  visited_gynecologist: Yup.string(),
+  screening_test: Yup.string(),
+  abdominal_cramp: Yup.string(),
+  vaginal_discharge: Yup.string(),
+  burning_urine: Yup.string(),
+  bowel_control: Yup.string(),
+  leg_swelling: Yup.string(),
+  back_pain: Yup.string(),
+  squatting: Yup.string(),
+  role_wife: Yup.string(),
+  relationship_closeness: Yup.string(),
+  uneasy_discussing: Yup.string(),
+  people_avoided: Yup.string(),
+});

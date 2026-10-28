@@ -1,0 +1,479 @@
+// ==============================
+// DEMOGRAPHIC DETAILS
+// ==============================
+
+export const demographicLabels: Record<string, string> = {
+  fullName: "Full Name",
+  crNo: "CR Number",
+  dateOfBirth: "Date of Birth",
+  age: "Age",
+  sex: "Gender / Sex",
+  maritalStatus: "Marital Status",
+
+  villageTownCity: "Village / Town / City",
+  blockTehsil: "Block / Tehsil",
+  district: "District",
+  state: "State",
+  pinCode: "Pin Code",
+  settlement: "Settlement Type",
+  distanceToHospital: "Distance to Hospital (km)",
+
+  education: "Education",
+  occupation: "Occupation",
+  otherOccupation: "Other Occupation",
+  monthlyFamilyIncome: "Monthly Family Income",
+  mainCaregiver: "Main Caregiver",
+
+  cancerType: "Cancer Type",
+  otherCancerType: "Other Cancer Type",
+
+};
+
+export const demographicOrder = [
+  "fullName",
+  "crNo",
+  "dateOfBirth",
+  "age",
+  "sex",
+  "maritalStatus",
+  "villageTownCity",
+  "blockTehsil",
+  "district",
+  "state",
+  "pinCode",
+  "settlement",
+  "distanceToHospital",
+  "education",
+  "occupation",
+  "otherOccupation",
+  "monthlyFamilyIncome",
+  "mainCaregiver",
+  "cancerType",
+  "otherCancerType",
+
+];
+
+
+
+// ==============================
+// VISIT FORM
+// ==============================
+
+export const visitLabels: Record<string, string> = {
+  visitNumber: "Visit Number",
+  visitDate: "Visit Date",
+  phaseOfCare: "Phase of Care",
+  treatmentCompletionDate: "Date of Treatment Completion",
+  diagnosisDate: "Date of Diagnosis",
+  monthsSinceDiagnosis: "Months Since Diagnosis",
+  respondent: "Respondent",
+  consent: "Consent Obtained",
+};
+
+export const visitOrder = [
+  "visitNumber",
+  "visitDate",
+  "phaseOfCare",
+  "treatmentCompletionDate",
+  "diagnosisDate",
+  "monthsSinceDiagnosis",
+  "respondent",
+  "consent",
+];
+
+
+// ==============================
+// CLINICAL STATUS FORM
+// ==============================
+
+export const clinicalStatusLabels: Record<string, string> = {
+  assessmentDone: "Assessment Done",
+  ecogPerformanceStatus: "ECOG Performance Status",
+  weight: "Weight (kg)",
+  height: "Height (cm)",
+  bmi: "BMI",
+  haemoglobin: "Haemoglobin (g/dL)",
+  haemoglobinReport: "Haemoglobin Report",
+  creatinine: "Creatinine (mg/dL)",
+  creatinineReport: "Creatinine Report",
+  comorbidities: "Comorbidities",
+  treatmentCompliance: "Treatment Compliance",
+  stageAtDiagnosis: "Stage at Diagnosis",
+  extent: "Extent",
+  treatmentReceived: "Treatment Received",
+  treatmentStatus: "Treatment Status",
+  diseaseStatus: "Disease Status",
+  recurrenceDate: "Recurrence Date",
+  ptnmStaging: "pTNM Staging",
+  durationOfSurvival: "Duration of Survival",
+  tobaccoUse: "Tobacco Use",
+  tobaccoType: "Tobacco Type",
+  partnerTobaccoUse: "Partner Tobacco Use",
+  alcoholUse: "Alcohol Use",
+  biopsyReport: "Biopsy Report",
+  clinicalReport: "Clinical Report",
+  oralCavityPhoto: "Oral Cavity Photo",
+};
+
+export const clinicalStatusOrder = [
+  "assessmentDone",
+  "ecogPerformanceStatus",
+  "weight",
+  "height",
+  "bmi",
+  "haemoglobin",
+  "haemoglobinReport",
+  "creatinine",
+  "creatinineReport",
+  "comorbidities",
+  "treatmentCompliance",
+  "stageAtDiagnosis",
+  "extent",
+  "treatmentReceived",
+  "treatmentStatus",
+  "diseaseStatus",
+  "recurrenceDate",
+  "biopsyReport",
+  "clinicalReport",
+  "ptnmStaging",
+  "durationOfSurvival",
+  "tobaccoUse",
+  "tobaccoType",
+  "oralCavityPhoto",
+  "partnerTobaccoUse",
+  "alcoholUse",
+];
+
+
+// Backward-compatible combined export (used in VisitInfoAccordions)
+export const clinicalLabels: Record<string, string> = {
+  ...visitLabels,
+  ...clinicalStatusLabels,
+};
+
+export const clinicalOrder = [
+  ...visitOrder,
+  ...clinicalStatusOrder,
+];
+
+// ==============================
+// DISEASE-SPECIFIC (Breast Cancer)
+// ==============================
+
+export const breastCancerLabels: Record<string, string> = {
+  arm_shoulder_pain: "Arm/Shoulder Pain",
+  swelling: "Swelling in Arm/Hand",
+  difficulty_raising_arm: "Difficulty Raising Arm",
+  skin_changes: "Skin Changes in Treated Area",
+  difficulty_sleeping: "Difficulty Sleeping due to Pain/Discomfort",
+  difficulty_carrying: "Difficulty Carrying Heavy Things",
+  hesitation_clothes: "Hesitation Wearing Certain Clothes",
+  relationship_closeness: "Difficulty Feeling Close to Partner",
+  uneasy_social: "Uneasy in Social Situations",
+};
+
+export const breastCancerOrder = [
+  "arm_shoulder_pain",
+  "swelling",
+  "difficulty_raising_arm",
+  "skin_changes",
+  "difficulty_sleeping",
+  "difficulty_carrying",
+  "hesitation_clothes",
+  "relationship_closeness",
+  "uneasy_social",
+];
+
+// ==============================
+// DISEASE-SPECIFIC (Cervical Cancer)
+// ==============================
+
+export const cervicalCancerLabels: Record<string, string> = {
+  menarche_age: "Age at Menarche",
+  marriage_age: "Age at Marriage",
+  first_intimate_relationship_age: "Age at First Intimate Relationship",
+  family_planning_methods: "Family Planning Methods Used",
+  family_planning_duration: "Duration of Family Planning Use",
+  pregnancy_count: "Total Pregnancies",
+  miscarriage: "Any Miscarriages?",
+  miscarriage_details: "Miscarriage Details",
+  stillbirth: "Any Stillbirths?",
+  stillbirth_details: "Stillbirth Details",
+  visited_gynecologist: "Visited Gynecologist Before?",
+  screening_test: "Ever Had a Screening Test?",
+  abdominal_cramp: "Abdominal Cramp",
+  vaginal_discharge: "Vaginal Discharge",
+  burning_urine: "Burning Sensation During Urination",
+  bowel_control: "Difficulty Controlling Bowel Movement",
+  leg_swelling: "Swelling in Legs",
+  back_pain: "Lower Back Pain",
+  squatting: "Difficulty Squatting",
+  role_wife: "Difficulty Fulfilling Role as Wife",
+  relationship_closeness: "Difficulty Feeling Close to Partner",
+  uneasy_discussing: "Uneasy Discussing Illness",
+  people_avoided: "People Avoided Due to Illness",
+};
+
+export const cervicalCancerOrder = [
+  "menarche_age",
+  "marriage_age",
+  "first_intimate_relationship_age",
+  "family_planning_methods",
+  "family_planning_duration",
+  "pregnancy_count",
+  "miscarriage",
+  "miscarriage_details",
+  "stillbirth",
+  "stillbirth_details",
+  "visited_gynecologist",
+  "screening_test",
+  "abdominal_cramp",
+  "vaginal_discharge",
+  "burning_urine",
+  "bowel_control",
+  "leg_swelling",
+  "back_pain",
+  "squatting",
+  "role_wife",
+  "relationship_closeness",
+  "uneasy_discussing",
+  "people_avoided",
+];
+
+// ==============================
+// DISEASE-SPECIFIC (Head & Neck Cancer)
+// ==============================
+
+export const headAndNeckCancerLabels: Record<string, string> = {
+  pain: "Pain in Mouth/Throat",
+  difficulty_chewing_swallowing: "Difficulty Chewing or Swallowing",
+  choking_coughing: "Choking or Coughing During Eating",
+  voice_changes: "Voice Changes or Hoarseness",
+  wounds_ulcers: "Wounds or Ulcers in Mouth",
+  taste_changes: "Changes in Taste",
+  appearance_distress: "Distressed by Changes in Appearance",
+  embarrassed_tube: "Embarrassed by Feeding/Breathing Tube",
+  uncomfortable_eating_out: "Uncomfortable Eating Around Others",
+  smell_avoidance: "Avoiding Socializing Due to Smell",
+  self_blame: "Blaming Self (e.g. tobacco use)",
+};
+
+export const headAndNeckCancerOrder = [
+  "pain",
+  "difficulty_chewing_swallowing",
+  "choking_coughing",
+  "voice_changes",
+  "wounds_ulcers",
+  "taste_changes",
+  "appearance_distress",
+  "embarrassed_tube",
+  "uncomfortable_eating_out",
+  "smell_avoidance",
+  "self_blame",
+];
+
+// ==============================
+// WOMEN'S HEALTH
+// ==============================
+
+export const womensHealthLabels: Record<string, string> = {
+  menarche_age: "Age at Menarche",
+  period_regularity: "Are Periods Regular?",
+  menses_frequency: "Menses Frequency",
+  heavy_bleeding: "Heavy Bleeding/Clots?",
+  unusual_discharge: "Unusual Discharge?",
+  period_pain: "Severe Period Pain?",
+  sexually_active: "Sexually Active?",
+  sexually_inactive_reason: "Reason for Not Being Sexually Active",
+  menopause_age: "Age at Menopause",
+  visited_gynecologist: "Visited Gynecologist?",
+  gynecologist_reason: "Reasons for Visiting Gynecologist",
+  gynecologist_other_reason: "Other Reason",
+  current_pelvic_symptoms: "Current Pelvic Symptoms?",
+  itching_irritation: "Itching/Irritation?",
+  gynecological_surgery: "Any Gynecological Surgery?",
+  gynecological_surgery_details: "Surgery Details",
+  infertility_treatment: "Ever Had Infertility Treatment?",
+  total_pregnancies: "Total Pregnancies",
+  number_of_children: "Number of Children",
+  miscarriage_termination: "Any Miscarriages/Terminations?",
+  miscarriage_count: "Miscarriage Count",
+  miscarriage_reason: "Reason for Miscarriage",
+  stillbirth: "Any Stillbirths?",
+  stillbirth_count: "Stillbirth Count",
+  stillbirth_reason: "Reason for Stillbirth",
+  currently_breastfeeding: "Currently Breastfeeding?",
+  ever_breastfed: "Ever Breastfed?",
+  contraceptive_used: "Ever Used Contraceptives?",
+  contraceptive_methods: "Contraceptive Methods",
+  contraceptive_other: "Other Contraceptive Method",
+  counselling_interest: "Interested in Family Planning Counselling?",
+  hpv_vaccine_awareness: "Aware of HPV Vaccine?",
+  hpv_vaccine_received: "Received HPV Vaccine?",
+  hpv_vaccine_doses: "Number of Doses",
+  hpv_family_vaccination_interest: "Interested in Vaccinating Family Members?",
+  cervical_screening_done: "Ever Had Cervical Screening (Pap/HPV)?",
+  cervical_screening_when: "When was it Done?",
+  cervical_screening_not_done_reason: "Reason for Not Screening",
+  willing_to_screen_now: "Willing to Screen Now?",
+  self_breast_exam: "Perform Self Breast Exam?",
+  sbe_awareness: "Aware of Self Breast Exam?",
+  breast_symptoms: "Any Breast Symptoms (Lump, Pain)?",
+  breast_imaging: "Previous Breast Imaging (Mammogram/USG)?",
+  breast_imaging_date: "Date of Last Imaging",
+  breast_imaging_result: "Result of Imaging",
+  knows_breast_self_exam: "Knows How to Perform Self Exam?",
+  bone_test_done: "Ever had Bone Density Test (DEXA)?",
+  bone_test_name: "Which Bone Test?",
+  bone_test_other: "Other Bone Test",
+  fracture_minor_fall: "Any Fracture from Minor Fall?",
+  vitamin_d_deficiency: "Diagnosed with Vitamin D Deficiency?",
+  bone_supplements: "Taking Calcium/Vitamin D Supplements?",
+  hemoglobin_tested: "Hemoglobin Tested in Last Year?",
+  anemia_diagnosed: "Diagnosed with Anemia?",
+  anemia_symptoms: "Symptoms of Anemia?",
+  iron_supplements: "Taking Iron Supplements?",
+  bp_sugar_checked: "BP/Sugar Checked in Last Year?",
+  thyroid_tested: "Thyroid Tested in Last Year?",
+  gynecological_checkup: "Routine Gynecological Checkup Done?",
+  womens_health_vaccinations: "Received Adult Vaccinations (Flu, Tetanus)?",
+  postmenopausal_bleeding: "Any Postmenopausal Bleeding?",
+  pelvic_bloating: "Persistent Pelvic Bloating/Pain?",
+  severe_tiredness: "Severe Unexplained Tiredness?",
+  nipple_discharge: "Bloody/Clear Nipple Discharge?",
+  breast_lump_change: "New Breast Lump/Change in Shape?",
+  foul_vaginal_discharge: "Foul Smelling Vaginal Discharge?",
+  pm_cbc_done: "Postmenopausal CBC Done?",
+  pm_hemoglobin_level: "PM Hemoglobin Level",
+  pm_blood_sugar_done: "PM Blood Sugar Done?",
+  pm_lipid_profile_done: "PM Lipid Profile Done?",
+  pm_dexa_done: "PM DEXA Done?",
+  pm_calcium_level: "PM Calcium Level",
+  pm_cervical_screening: "PM Cervical Screening Done?",
+  pm_cervical_results_normal: "PM Cervical Results Normal?",
+  pm_tvs_done: "PM TVS Done?",
+  pm_endometrial_thickness_normal: "PM Endometrial Thickness Normal?",
+  pm_mammogram_done: "PM Mammogram Done?",
+};
+
+export const womensHealthOrder = [
+  "menarche_age",
+  "period_regularity",
+  "menses_frequency",
+  "heavy_bleeding",
+  "unusual_discharge",
+  "period_pain",
+  "sexually_active",
+  "sexually_inactive_reason",
+  "menopause_age",
+  "visited_gynecologist",
+  "gynecologist_reason",
+  "gynecologist_other_reason",
+  "current_pelvic_symptoms",
+  "itching_irritation",
+  "gynecological_surgery",
+  "gynecological_surgery_details",
+  "infertility_treatment",
+  "total_pregnancies",
+  "number_of_children",
+  "miscarriage_termination",
+  "miscarriage_count",
+  "miscarriage_reason",
+  "stillbirth",
+  "stillbirth_count",
+  "stillbirth_reason",
+  "currently_breastfeeding",
+  "ever_breastfed",
+  "contraceptive_used",
+  "contraceptive_methods",
+  "contraceptive_other",
+  "counselling_interest",
+  "hpv_vaccine_awareness",
+  "hpv_vaccine_received",
+  "hpv_vaccine_doses",
+  "hpv_family_vaccination_interest",
+  "cervical_screening_done",
+  "cervical_screening_when",
+  "cervical_screening_not_done_reason",
+  "willing_to_screen_now",
+  "self_breast_exam",
+  "sbe_awareness",
+  "breast_symptoms",
+  "breast_imaging",
+  "breast_imaging_date",
+  "breast_imaging_result",
+  "knows_breast_self_exam",
+  "bone_test_done",
+  "bone_test_name",
+  "bone_test_other",
+  "fracture_minor_fall",
+  "vitamin_d_deficiency",
+  "bone_supplements",
+  "hemoglobin_tested",
+  "anemia_diagnosed",
+  "anemia_symptoms",
+  "iron_supplements",
+  "bp_sugar_checked",
+  "thyroid_tested",
+  "gynecological_checkup",
+  "womens_health_vaccinations",
+  "postmenopausal_bleeding",
+  "pelvic_bloating",
+  "severe_tiredness",
+  "nipple_discharge",
+  "breast_lump_change",
+  "foul_vaginal_discharge",
+  "pm_cbc_done",
+  "pm_hemoglobin_level",
+  "pm_blood_sugar_done",
+  "pm_lipid_profile_done",
+  "pm_dexa_done",
+  "pm_calcium_level",
+  "pm_cervical_screening",
+  "pm_cervical_results_normal",
+  "pm_tvs_done",
+  "pm_endometrial_thickness_normal",
+  "pm_mammogram_done",
+];
+
+// ==============================
+// PATIENT NARRATIVE
+// ==============================
+
+export const patientNarrativeLabels: Record<string, string> = {
+  dialect: "Dialect Spoken",
+  dialect_other: "Other Dialect",
+  speaker: "Who is Speaking",
+  health_since_last_visit: "Health Since Last Visit",
+  most_trouble: "What troubles you the most?",
+  difficult_tasks: "Difficult Tasks",
+  family_impact: "Impact on Family",
+  treatment_cost: "Treatment Cost Impact",
+  support: "Support Received",
+  future_hopes_worries: "Hopes and Worries for the Future",
+  anything_else: "Anything Else to Add",
+  keywords: "Keywords",
+  themes: "Themes",
+  support_terms: "Support Terms",
+  most_important_sentence: "Most Important Sentence",
+  narrative_vs_scores: "Narrative vs Scores",
+};
+
+export const patientNarrativeOrder = [
+  "dialect",
+  "dialect_other",
+  "speaker",
+  "health_since_last_visit",
+  "most_trouble",
+  "difficult_tasks",
+  "family_impact",
+  "treatment_cost",
+  "support",
+  "future_hopes_worries",
+  "anything_else",
+  "keywords",
+  "themes",
+  "support_terms",
+  "most_important_sentence",
+  "narrative_vs_scores",
+];
