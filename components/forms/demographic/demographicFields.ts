@@ -153,7 +153,7 @@ export const demographicFields: DemographicField[] = [
     name: "distanceToHospital",
     label: "Distance to Hospital",
     type: "select",
-    placeholder: "Select Distance to Hospital",
+    placeholder: "Select Distance",
     options: distanceToHospitalOptions,
   },
 
