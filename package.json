@@ -15,6 +15,11 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/jsonwebtoken": "^9.0.10",
+    "typescript": "^5",
     "@aws-sdk/client-s3": "^3.1152.0",
     "@aws-sdk/lib-storage": "^3.1152.0",
     "@types/jszip": "^3.4.0",
@@ -42,14 +47,9 @@
     "yup": "^1.7.1"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.2.9",
-    "typescript": "^5"
+    "eslint-config-next": "16.2.9"
   },
   "allowScripts": {
     "sharp@0.34.5": true,
