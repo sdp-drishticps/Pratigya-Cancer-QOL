@@ -30,6 +30,7 @@ interface ClinicalVisitsSectionProps {
   patientId: string;
   visits: ClinicalVisit[];
   cancerTypes?: string[];
+  patientSex?: string;
 }
 
 // =====================================
@@ -40,7 +41,9 @@ export default function ClinicalVisitsSection({
   patientId,
   visits,
   cancerTypes = [],
+  patientSex = "",
 }: ClinicalVisitsSectionProps) {
+  const isFemale = patientSex.toLowerCase() === "female";
   const [expanded, setExpanded] = useState(true);
   const [openVisit, setOpenVisit] = useState<number | null>(null);
 
@@ -133,7 +136,7 @@ export default function ClinicalVisitsSection({
                   {/* Visit Details Panel */}
                   {openVisit === visit.visitNumber && (
                     <div className="border-t border-[#EAECF0] bg-[#F9FAFB] p-6">
-                      <FormStatusBadges visit={visit} />
+                      <FormStatusBadges visit={visit} isFemale={isFemale} />
 
                       <VisitInfoAccordion visit={visit} patientId={patientId} />
 
@@ -153,6 +156,7 @@ export default function ClinicalVisitsSection({
                       <WomensHealthAccordion
                         visit={visit}
                         patientId={patientId}
+                        isFemale={isFemale}
                       />
 
                       <PatientNarrativeAccordion

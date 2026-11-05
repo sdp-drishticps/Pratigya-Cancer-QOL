@@ -27,20 +27,22 @@ const DISEASE_SECTIONS: { key: string; label: string }[] = [
   { key: "headAndNeckCancer", label: "Head & Neck Cancer" },
 ];
 
-// Optional sections — only shown when filled
-const OPTIONAL_SECTIONS: { key: string; label: string }[] = [
-  { key: "womensHealth", label: "Women's Health" },
-];
+// Optional sections — only shown when filled (for non-female patients)
+const OPTIONAL_SECTIONS: { key: string; label: string }[] = [];
 
 interface Props {
   visit: ClinicalVisit;
+  isFemale?: boolean;
 }
 
-export default function FormStatusBadges({ visit }: Props) {
+export default function FormStatusBadges({ visit, isFemale = false }: Props) {
   if (!visit.sectionStatus) return null;
 
   const status = visit.sectionStatus as Record<string, unknown>;
   const diseaseStatus = (status.diseaseSpecific ?? {}) as Record<string, boolean>;
+
+  // Women's Health: core section for female patients, optional for others
+  const womensHealthDone = status["womensHealth"] === true;
 
   return (
     <div className="mb-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
@@ -69,22 +71,21 @@ export default function FormStatusBadges({ visit }: Props) {
           );
         })}
 
+        {/* Women's Health — core for female patients, hidden for others unless filled */}
+        {(isFemale || womensHealthDone) && (
+          <span
+            className={`rounded-full px-3 py-1 text-xs font-medium ${womensHealthDone
+                ? "bg-green-100 text-green-700"
+                : "bg-slate-100 text-slate-500"
+              }`}
+          >
+            {womensHealthDone ? "✓" : "○"} Women&apos;s Health
+          </span>
+        )}
+
         {/* Disease-specific — only show filled ones */}
         {DISEASE_SECTIONS.map(({ key, label }) => {
           if (!diseaseStatus[key]) return null;
-          return (
-            <span
-              key={key}
-              className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700"
-            >
-              ✓ {label}
-            </span>
-          );
-        })}
-
-        {/* Optional sections — only show when filled */}
-        {OPTIONAL_SECTIONS.map(({ key, label }) => {
-          if (!status[key]) return null;
           return (
             <span
               key={key}

@@ -17,17 +17,19 @@ import type { ClinicalVisit } from "./visitTypes";
 interface Props {
   visit: ClinicalVisit;
   patientId: string;
+  isFemale?: boolean;
 }
 
 // =====================================
 // WomensHealthAccordion
-// Only renders when sectionStatus.womensHealth is truthy
+// Always renders for female patients; hidden for others unless already filled
 // =====================================
 
-export default function WomensHealthAccordion({ visit, patientId }: Props) {
+export default function WomensHealthAccordion({ visit, patientId, isFemale = false }: Props) {
   const router = useRouter();
 
-  if (!visit.sectionStatus?.womensHealth) return null;
+  // Show only if patient is female OR the section was already filled
+  if (!isFemale && !visit.sectionStatus?.womensHealth) return null;
 
   const whData = visit.womensHealth as Record<string, unknown> | undefined;
   const isFilled = !!(whData && Object.keys(whData).length > 0);

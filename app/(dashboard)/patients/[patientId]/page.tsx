@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -135,6 +135,7 @@ export default function PatientDetailsPage() {
               ? (patient.demographicDetails.cancerType as string[])
               : []
           }
+          patientSex={(patient.demographicDetails?.sex as string) || ""}
         />
 
         {/* =============================
