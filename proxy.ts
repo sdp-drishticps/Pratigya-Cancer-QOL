@@ -1,4 +1,4 @@
-//THIS IS THE MIDDLEWAE FILE
+//THIS IS THE MIDDLEWAE FILE FOR AUTHENTICATION AND AUTHORIZATION
 
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
