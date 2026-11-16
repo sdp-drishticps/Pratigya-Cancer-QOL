@@ -21,6 +21,11 @@ export const demographicSchema = Yup.object().shape({
   maritalStatus: Yup.string()
     .required("Marital Status is required"),
 
+  contactNumber: Yup.string()
+    .matches(/^\d{10}$/, "Contact number must be exactly 10 digits")
+    .nullable()
+    .notRequired(),
+
   // ==================================================
   // RESIDENCE
   // ==================================================

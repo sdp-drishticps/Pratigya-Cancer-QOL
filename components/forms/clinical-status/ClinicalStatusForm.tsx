@@ -216,11 +216,12 @@ export default function ClinicalStatusForm({
       setSelectedCreatinineReport(null);
 
       isPatientValidRef.current = false;
-    } catch (error: any) {
-      toast.error(error?.response?.data?.message || "Something went wrong");
+    } catch (err: any) {
+      toast.error(err?.response?.data?.message || "Something went wrong");
     } finally {
       formik.setSubmitting(false);
     }
+    
   };
 
   // =====================================

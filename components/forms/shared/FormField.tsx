@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -41,6 +42,8 @@ export interface FormFieldConfig {
   min?: number;
   max?: number;
   step?: string | number;
+  maxLength?: number;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
 
   accept?: string;
 
@@ -269,9 +272,19 @@ export default function FormField({
         placeholder={field.placeholder}
         min={field.min}
         max={field.max}
-        step={field.step}
+        step={field.type === "number" ? (field.step ?? "any") : field.step}
+        maxLength={field.maxLength}
+        inputMode={field.inputMode}
         value={value ?? ""}
-        onChange={formik.handleChange}
+        onChange={(e) => {
+          if (field.inputMode === "numeric") {
+            // Strip any character that is not a digit
+            const digits = e.target.value.replace(/\D/g, "");
+            formik.setFieldValue(field.name, digits);
+          } else {
+            formik.handleChange(e);
+          }
+        }}
         onBlur={formik.handleBlur}
         disabled={field.disabled}
         readOnly={field.disabled}

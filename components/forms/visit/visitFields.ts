@@ -171,7 +171,6 @@ export const visitFields: FormFieldConfig[] = [
     label: "Upload Oral Cavity Photo",
     type: "file",
     accept: ".jpg,.jpeg,.png",
-    required: true,
     showWhen: (values) =>
       values.tobaccoUse === "Previously Used" ||
       values.tobaccoUse === "Currently Using",

@@ -11,6 +11,7 @@ export interface DemographicFormValues {
   age: number | "";
   sex: string;
   maritalStatus: string;
+  contactNumber: string;
 
   // ===========================
   // Residence

@@ -14,6 +14,7 @@ export const buildDemographicRows = (patients: ExportPatient[]) =>
     Age: p.demographicDetails?.age ?? "",
     Sex: p.demographicDetails?.sex ?? "",
     "Marital Status": p.demographicDetails?.maritalStatus ?? "",
+    "Contact Number": p.demographicDetails?.contactNumber ?? "",
     "Village / Town / City": p.demographicDetails?.villageTownCity ?? "",
     "Block / Tehsil": p.demographicDetails?.blockTehsil ?? "",
     District: p.demographicDetails?.district ?? "",

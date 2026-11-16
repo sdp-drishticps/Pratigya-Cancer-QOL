@@ -8,6 +8,7 @@ export interface IDemographicDetails {
   age: string;
   sex: string;
   maritalStatus: string;
+  contactNumber: string;
 
   // ─── Residence ───────────────────────────────────
   villageTownCity: string;
@@ -39,6 +40,7 @@ export const DemographicDetailsSchema = new Schema<IDemographicDetails>(
     age: { type: String, default: "" },
     sex: { type: String, default: "" },
     maritalStatus: { type: String, default: "" },
+    contactNumber: { type: String, default: "", trim: true },
 
     // ─── Residence ─────────────────────────────────
     villageTownCity: { type: String, default: "", trim: true },

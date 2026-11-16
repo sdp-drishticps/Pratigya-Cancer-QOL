@@ -42,6 +42,10 @@ export interface DemographicField {
 
   max?: number;
 
+  maxLength?: number;
+
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+
   showWhen?: (values: Record<string, any>) => boolean;
 }
 
@@ -99,6 +103,15 @@ export const demographicFields: DemographicField[] = [
     placeholder: "Select Marital Status",
     required: true,
     options: maritalStatusOptions,
+  },
+
+  {
+    name: "contactNumber",
+    label: "Contact Number",
+    type: "text",
+    placeholder: "Enter 10-digit mobile number",
+    maxLength: 10,
+    inputMode: "numeric",
   },
 
   // =====================================

@@ -9,6 +9,7 @@ export const demographicLabels: Record<string, string> = {
   age: "Age",
   sex: "Gender / Sex",
   maritalStatus: "Marital Status",
+  contactNumber: "Contact Number",
 
   villageTownCity: "Village / Town / City",
   blockTehsil: "Block / Tehsil",
@@ -36,6 +37,7 @@ export const demographicOrder = [
   "age",
   "sex",
   "maritalStatus",
+  "contactNumber",
   "villageTownCity",
   "blockTehsil",
   "district",

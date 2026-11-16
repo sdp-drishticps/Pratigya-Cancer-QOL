@@ -32,6 +32,7 @@ export const clinicalStatusFields: FormFieldConfig[] = [
     type: "number",
     min: 10,
     max: 200,
+    step: "0.1",
     placeholder: "Enter Weight",
   },
 
@@ -41,6 +42,7 @@ export const clinicalStatusFields: FormFieldConfig[] = [
     type: "number",
     min: 80,
     max: 220,
+    step: "0.1",
     placeholder: "Enter Height",
   },
 

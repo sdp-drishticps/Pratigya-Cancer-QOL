@@ -21,9 +21,9 @@ function buildS3Url(key: string): string {
   return `https://${BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/${key}`;
 };
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25 MB
 
-const ALLOWED_FILE_TYPES = ["application/pdf", "image/jpeg", "image/png"];
+const ALLOWED_FILE_TYPES = ["application/pdf", "image/jpeg","image/jpg", "image/png"];
 
 const ALLOWED_EXTENSIONS = [".pdf", ".jpg", ".jpeg", ".png"];
 
@@ -58,7 +58,7 @@ export async function savePatientFile({
 
   // ── File size ─────────────────────────────────────────────
   if (file.size > MAX_FILE_SIZE) {
-    throw new Error("File size must not exceed 5 MB.");
+    throw new Error("File size must not exceed 25 MB.");
   }
 
   // ── File type / extension ─────────────────────────────────

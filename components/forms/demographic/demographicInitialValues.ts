@@ -11,6 +11,7 @@ export const demographicInitialValues: DemographicFormValues = {
   age: "",
   sex: "",
   maritalStatus: "",
+  contactNumber: "",
 
   // ===========================
   // Residence
