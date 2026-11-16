@@ -241,7 +241,7 @@ export default function VisitForm({
 
       resetPatientVisit();
     } catch (err: any) {
-      toast.error(err?.response?.data?.message || "Something went wrong");
+      toast(err?.response?.data?.message || "Something went wrong");
     } finally {
       formik.setSubmitting(false);
     }
