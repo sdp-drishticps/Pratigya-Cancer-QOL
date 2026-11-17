@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## SMTP configuration
+
+Password-reset emails are sent through the SMTP server configured for the deployment. Set these environment variables in your hosting provider; do not commit credentials:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_FROM`
+- `SMTP_USER` and `SMTP_PASS` (when the SMTP server requires authentication)
+- `SMTP_SECURE` (`true` for implicit TLS, commonly port 465; `false` for STARTTLS, commonly port 587; defaults to `true` on port 465)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
