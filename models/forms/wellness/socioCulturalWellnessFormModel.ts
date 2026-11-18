@@ -7,7 +7,7 @@ export interface SocioCulturalWellnessFormData {
   burdenToFamily: number;
   trustedPersonToTalk: number;
   avoidingSocialGatherings: number;
-  treatedDifferentlyByFamily: number;
+  // treatedDifferentlyByFamily: number;
   treatedDifferentlyByOthers: number;
 }
 
@@ -19,7 +19,7 @@ export const SocioCulturalWellnessSchema = new Schema<SocioCulturalWellnessFormD
     burdenToFamily: { type: Number, default: 0 },
     trustedPersonToTalk: { type: Number, default: 0 },
     avoidingSocialGatherings: { type: Number, default: 0 },
-    treatedDifferentlyByFamily: { type: Number, default: 0 },
+    // treatedDifferentlyByFamily: { type: Number, default: 0 },
     treatedDifferentlyByOthers: { type: Number, default: 0 },
   },
   { _id: false },

@@ -94,7 +94,7 @@ export const SECTION_CONFIGS: Record<
       "burdenToFamily",
       "trustedPersonToTalk",
       "avoidingSocialGatherings",
-      "treatedDifferentlyByFamily",
+      // "treatedDifferentlyByFamily",
       "treatedDifferentlyByOthers",
     ],
     greenThreshold: 20,

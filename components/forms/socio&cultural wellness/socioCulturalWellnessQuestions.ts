@@ -35,14 +35,14 @@ export const socioCulturalWellnessQuestions = [
     question:
       "Do you feel like avoiding social gatherings because of your illness?",
   },
+  // {
+  //   number: 7,
+  //   name: "treatedDifferentlyByFamily",
+  //   question:
+  //     "Have you felt left out, avoided, made to feel unwelcome, or treated differently by family because of your illness?",
+  // },
   {
     number: 7,
-    name: "treatedDifferentlyByFamily",
-    question:
-      "Have you felt left out, avoided, made to feel unwelcome, or treated differently by family because of your illness?",
-  },
-  {
-    number: 8,
     name: "treatedDifferentlyByOthers",
     question:
       "Have you felt left out, avoided, made to feel unwelcome, or treated differently by others because of your illness?",

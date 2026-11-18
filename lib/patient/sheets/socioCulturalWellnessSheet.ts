@@ -20,8 +20,10 @@ export const buildSocioCulturalWellnessRows = (patients: ExportPatient[]) =>
         v.socioCulturalWellness?.trustedPersonToTalk ?? "",
       "Avoiding Social Gatherings":
         v.socioCulturalWellness?.avoidingSocialGatherings ?? "",
-      "Treated Differently By Family":
-        v.socioCulturalWellness?.treatedDifferentlyByFamily ?? "",
+        
+      // "Treated Differently By Family":
+      //   v.socioCulturalWellness?.treatedDifferentlyByFamily ?? "",
+
       "Treated Differently By Others":
         v.socioCulturalWellness?.treatedDifferentlyByOthers ?? "",
     })),

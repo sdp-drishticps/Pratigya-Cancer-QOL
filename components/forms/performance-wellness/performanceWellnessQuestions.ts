@@ -16,8 +16,7 @@ export const performanceWellnessQuestions = [
   {
     number: 3,
     name: "employmentImpact",
-    question:
-      "Have you been able to continue working, or has your illness affected your employment?",
+    question: "Have you been able to continue working?",
   },
 
   {

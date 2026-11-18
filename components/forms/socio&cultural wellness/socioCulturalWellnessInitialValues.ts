@@ -7,6 +7,6 @@ export const socioCulturalWellnessInitialValues = {
   burdenToFamily: 0,
   trustedPersonToTalk: 0,
   avoidingSocialGatherings: 0,
-  treatedDifferentlyByFamily: 0,
+  // treatedDifferentlyByFamily: 0,
   treatedDifferentlyByOthers: 0,
 };
