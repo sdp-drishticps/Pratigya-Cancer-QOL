@@ -4,6 +4,8 @@ export const womensHealthSchema = Yup.object().shape({
   patientId: Yup.string().required("Patient ID is required"),
 
   // ── Menstrual History ──────────────────────────────
+  menopause_attained: Yup.string(),
+
   menarche_age: Yup.number()
     .min(8, "Age must be at least 8")
     .max(20, "Age must be at most 20")
@@ -33,6 +35,8 @@ export const womensHealthSchema = Yup.object().shape({
     .max(65, "Age must be at most 65")
     .nullable()
     .transform((v) => (isNaN(v) ? null : v)),
+
+  postmenopausal_bleeding_menstrual: Yup.string(),
 
   // ── Gynecologic History ────────────────────────────
   visited_gynecologist: Yup.string(),

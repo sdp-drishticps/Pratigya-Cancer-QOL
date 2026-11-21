@@ -2,6 +2,7 @@ import { Schema } from "mongoose";
 
 export interface WomensHealthFormData {
   // ─── Menstrual History ──────────────────────────
+  menopause_attained: string;
   menarche_age: string;
   period_regularity: string;
   menses_frequency: string;
@@ -11,6 +12,7 @@ export interface WomensHealthFormData {
   sexually_active: string;
   sexually_inactive_reason: string;
   menopause_age: string;
+  postmenopausal_bleeding_menstrual: string;
 
   // ─── Gynecologic History ────────────────────────
   visited_gynecologist: string;
@@ -101,6 +103,7 @@ export interface WomensHealthFormData {
 
 export const WomensHealthSchema = new Schema<WomensHealthFormData>(
   {
+    menopause_attained: { type: String, default: "" },
     menarche_age: { type: String, default: "" },
     period_regularity: { type: String, default: "" },
     menses_frequency: { type: String, default: "" },
@@ -110,6 +113,7 @@ export const WomensHealthSchema = new Schema<WomensHealthFormData>(
     sexually_active: { type: String, default: "" },
     sexually_inactive_reason: { type: String, default: "" },
     menopause_age: { type: String, default: "" },
+    postmenopausal_bleeding_menstrual: { type: String, default: "" },
     visited_gynecologist: { type: String, default: "" },
     gynecologist_reason: { type: [String], default: [] },
     gynecologist_other_reason: { type: String, default: "" },

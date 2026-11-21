@@ -3,19 +3,19 @@ export const socioCulturalWellnessQuestions = [
     number: 1,
     name: "familySupport",
     question:
-      "Have you felt supported by your family or loved ones during your illness?",
+      "Do you feel that you are not receiving adequate support from your family or loved ones during your illness?",
   },
   {
     number: 2,
     name: "familyAcceptanceAdjustment",
     question:
-      "Do you feel your family has been able to accept and adjust to your illness?",
+      "Do you feel that your family is finding it difficult to accept or adjust to your illness?",
   },
   {
     number: 3,
     name: "familyUnderstanding",
     question:
-      "Have you felt that your family truly understands what you are going through?",
+      "Do you feel that your family does not fully understand what you are going through?",
   },
   {
     number: 4,
@@ -27,7 +27,7 @@ export const socioCulturalWellnessQuestions = [
     number: 5,
     name: "trustedPersonToTalk",
     question:
-      "Have you had someone you trust to talk to about what you are going through?",
+      "Do you feel that you do not have someone you trust to talk to about what you are going through?",
   },
   {
     number: 6,

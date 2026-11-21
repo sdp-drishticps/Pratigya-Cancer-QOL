@@ -3,7 +3,7 @@ export const spiritualWellnessQuestions = [
     number: 1,
     name: "prayerFaithSpiritualPractices",
     question:
-      "Have you turned to prayer, faith, or spiritual practices to help you cope with your illness?",
+      "Have you experienced difficulty finding comfort or support through prayer, faith or spiritual practices while coping with your illness?",
   },
   {
     number: 2,
@@ -15,12 +15,12 @@ export const spiritualWellnessQuestions = [
     number: 3,
     name: "spiritualBeliefsHopeStrength",
     question:
-      "Do your spiritual or religious beliefs give you hope and strength in dealing with your illness?",
+      "Do you feel that your spiritual or religious beliefs are not providing you with hope or strength in dealing with your illness?",
   },
   {
     number: 4,
     name: "spiritualMindfulnessComfort",
     question:
-      "Have you found comfort or peace through spiritual, religious, or mindfulness practices?",
+      "Do you experience difficulty finding comfort or peace through spiritual, religious or mindfulness practices?",
   },
 ] as const;

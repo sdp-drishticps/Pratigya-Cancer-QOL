@@ -67,10 +67,10 @@ export const visitSchema = Yup.object().shape({
     is: (value: string) =>
       value === "Previously Used" || value === "Currently Using",
 
-    then: () =>
-      Yup.object({
-        fileName: Yup.string().required("Oral Cavity Photograph is required"),
-      }),
+    // then: () =>
+    //   Yup.object({
+    //     fileName: Yup.string().required("Oral Cavity Photograph is required"),
+    //   }),
 
     otherwise: () =>
       Yup.object({

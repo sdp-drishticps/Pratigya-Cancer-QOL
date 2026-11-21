@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, message: "Visit already exists for this patient" }, { status: 409 });
     }
 
-    if (error instanceof Error && (error.message === "Only PDF, JPG and PNG files are allowed." || error.message === "File size must not exceed 5 MB.")) {
+    if (error instanceof Error && (error.message === "Only PDF, JPG and PNG files are allowed." || error.message === "File size must not exceed 40 MB.")) {
       return NextResponse.json({ success: false, message: error.message }, { status: 400 });
     }
 

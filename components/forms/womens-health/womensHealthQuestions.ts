@@ -13,12 +13,23 @@ const YES_NO_DK = ["Yes", "No", "Don't know"] as const;
 // =====================================
 
 export const menstrualHistoryFields: FormFieldConfig[] = [
+  // ── New gate question ─────────────────────────────────────────────────────
+  {
+    name: "menopause_attained",
+    label: "Have you attained menopause?",
+    type: "select",
+    placeholder: "Select",
+    options: ["Yes", "No"],
+  },
+
+  // ── Menstrual-cycle questions (shown only when menopause NOT attained) ───
   {
     name: "period_regularity",
     label: "Periods regular or irregular?",
     type: "select",
     placeholder: "Select",
     options: ["Regular", "Irregular"],
+    showWhen: (v) => v.menopause_attained === "No",
   },
   {
     name: "menses_frequency",
@@ -32,6 +43,7 @@ export const menstrualHistoryFields: FormFieldConfig[] = [
       "More than 45 days apart",
       "Not applicable / Postmenopausal",
     ],
+    showWhen: (v) => v.menopause_attained === "No",
   },
   {
     name: "menarche_age",
@@ -40,14 +52,7 @@ export const menstrualHistoryFields: FormFieldConfig[] = [
     placeholder: "e.g. 13",
     min: 8,
     max: 20,
-  },
-  {
-    name: "menopause_age",
-    label: "Age at menopause (if applicable)",
-    type: "number",
-    placeholder: "e.g. 50",
-    min: 30,
-    max: 65,
+    showWhen: (v) => v.menopause_attained === "No",
   },
   {
     name: "heavy_bleeding",
@@ -55,17 +60,48 @@ export const menstrualHistoryFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: [...YES_NO],
+    showWhen: (v) => v.menopause_attained === "No",
   },
-  {
-    name: "unusual_discharge",
-    label: "Unusual / bad-smelling vaginal discharge?",
-    type: "select",
-    placeholder: "Select",
-    options: [...YES_NO],
-  },
+
   {
     name: "period_pain",
     label: "Period pain affecting daily activities?",
+    type: "select",
+    placeholder: "Select",
+    options: [...YES_NO],
+    showWhen: (v) => v.menopause_attained === "No",
+  },
+
+  {
+    name: "sexually_inactive_reason",
+    label: "Reason for not being sexually active",
+    type: "text",
+    placeholder: "Specify reason",
+    showWhen: (v) => v.sexually_active === "No",
+  },
+
+  // ── Menopause-specific questions (shown only when menopause IS attained) ─
+  {
+    name: "menopause_age",
+    label: "Age at menopause (years)",
+    type: "number",
+    placeholder: "e.g. 50",
+    min: 30,
+    max: 65,
+    showWhen: (v) => v.menopause_attained === "Yes",
+  },
+  {
+    name: "postmenopausal_bleeding_menstrual",
+    label: "Unexplained post-menopausal bleeding?",
+    type: "select",
+    placeholder: "Select",
+    options: [...YES_NO],
+    showWhen: (v) => v.menopause_attained === "Yes",
+  },
+
+  {
+    name: "unusual_discharge",
+    label: "Unusual / bad-smelling vaginal discharge?",
     type: "select",
     placeholder: "Select",
     options: [...YES_NO],
@@ -77,14 +113,9 @@ export const menstrualHistoryFields: FormFieldConfig[] = [
     placeholder: "Select",
     options: [...YES_NO],
   },
-  {
-    name: "sexually_inactive_reason",
-    label: "Reason for not being sexually active",
-    type: "text",
-    placeholder: "Specify reason",
-    showWhen: (v) => v.sexually_active === "No",
-  },
 ];
+
+
 
 // =====================================
 // Section 2 – Gynecologic History
@@ -599,7 +630,7 @@ export const alarmingSignsFields: FormFieldConfig[] = [
 
 // =====================================
 // Section 10 – Postmenopausal Checklist
-// (only shown when postmenopausal)
+// (only shown when menopause_attained === "Yes")
 // =====================================
 
 export const postmenopausalChecklistFields: FormFieldConfig[] = [
@@ -609,13 +640,14 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: ["Yes", "No", "Don't know / Not sure"],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
   {
     name: "pm_hemoglobin_level",
     label: "Recent Hemoglobin level",
     type: "text",
     placeholder: "e.g. 11.5 g/dL",
-    showWhen: (v) => v.pm_cbc_done === "Yes",
+    showWhen: (v) => v.menopause_attained === "Yes" && v.pm_cbc_done === "Yes",
   },
   {
     name: "pm_blood_sugar_done",
@@ -623,6 +655,7 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: ["Yes", "No", "Don't know / Not sure"],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
   {
     name: "pm_lipid_profile_done",
@@ -630,6 +663,7 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: ["Yes", "No", "Don't know / Not sure"],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
   {
     name: "pm_dexa_done",
@@ -637,13 +671,14 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: ["Yes", "No", "Never", "Don't know / Not sure"],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
   {
     name: "pm_calcium_level",
     label: "Calcium level (if known)",
     type: "text",
     placeholder: "e.g. 9.2 mg/dL",
-    showWhen: (v) => v.pm_dexa_done === "Yes",
+    showWhen: (v) => v.menopause_attained === "Yes" && v.pm_dexa_done === "Yes",
   },
   {
     name: "pm_cervical_screening",
@@ -656,6 +691,7 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
       "No",
       "Don't know",
     ],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
   {
     name: "pm_cervical_results_normal",
@@ -664,8 +700,9 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     placeholder: "Select",
     options: [...YES_NO_DK],
     showWhen: (v) =>
-      v.pm_cervical_screening === "Yes, within the last year" ||
-      v.pm_cervical_screening === "Yes, more than one year ago",
+      v.menopause_attained === "Yes" &&
+      (v.pm_cervical_screening === "Yes, within the last year" ||
+        v.pm_cervical_screening === "Yes, more than one year ago"),
   },
   {
     name: "pm_tvs_done",
@@ -673,6 +710,7 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: ["Yes", "No", "Never"],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
   {
     name: "pm_endometrial_thickness_normal",
@@ -680,7 +718,7 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: [...YES_NO_DK],
-    showWhen: (v) => v.pm_tvs_done === "Yes",
+    showWhen: (v) => v.menopause_attained === "Yes" && v.pm_tvs_done === "Yes",
   },
   {
     name: "pm_mammogram_done",
@@ -688,5 +726,6 @@ export const postmenopausalChecklistFields: FormFieldConfig[] = [
     type: "select",
     placeholder: "Select",
     options: ["Yes", "No", "Never"],
+    showWhen: (v) => v.menopause_attained === "Yes",
   },
 ];

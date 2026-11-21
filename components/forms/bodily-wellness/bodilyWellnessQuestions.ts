@@ -45,7 +45,7 @@ export const bodilyWellnessQuestions = [
     number: 8,
     name: "wellRested",
     question:
-      "Do you feel well rested after waking up?",
+      "Do you wake up feeling tired or unrefreshed?",
   },
   {
     number: 9,

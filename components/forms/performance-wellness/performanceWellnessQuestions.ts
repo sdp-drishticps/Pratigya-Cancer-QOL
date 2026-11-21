@@ -3,20 +3,20 @@ export const performanceWellnessQuestions = [
     number: 1,
     name: "usualActivitiesHome",
     question:
-      "Have you been able to carry out your usual activities and responsibilities at home?",
+      "Do you experience difficulty carrying out your usual activities and responsibilities at home?",
   },
 
   {
     number: 2,
     name: "usualWorkStudiesSocialActivities",
     question:
-      "Have you been able to carry out your usual work, studies, social activities, or other regular responsibilities?",
+      "Do you experience difficulty carrying out your usual work, studies, social activities or other regular responsibilities?",
   },
 
   {
     number: 3,
     name: "employmentImpact",
-    question: "Have you been able to continue working?",
+    question: "Has your illness affected your ability to continue working or meet your employment responsibilities?",
   },
 
   {

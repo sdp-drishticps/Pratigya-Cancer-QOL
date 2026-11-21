@@ -279,6 +279,7 @@ export const headAndNeckCancerOrder = [
 // ==============================
 
 export const womensHealthLabels: Record<string, string> = {
+  menopause_attained: "Have you attained menopause?",
   menarche_age: "Age at Menarche",
   period_regularity: "Are Periods Regular?",
   menses_frequency: "Menses Frequency",
@@ -288,6 +289,7 @@ export const womensHealthLabels: Record<string, string> = {
   sexually_active: "Sexually Active?",
   sexually_inactive_reason: "Reason for Not Being Sexually Active",
   menopause_age: "Age at Menopause",
+  postmenopausal_bleeding_menstrual: "Unexplained Post-Menopausal Bleeding?",
   visited_gynecologist: "Visited Gynecologist?",
   gynecologist_reason: "Reasons for Visiting Gynecologist",
   gynecologist_other_reason: "Other Reason",
@@ -359,6 +361,7 @@ export const womensHealthLabels: Record<string, string> = {
 };
 
 export const womensHealthOrder = [
+  "menopause_attained",
   "menarche_age",
   "period_regularity",
   "menses_frequency",
@@ -368,6 +371,7 @@ export const womensHealthOrder = [
   "sexually_active",
   "sexually_inactive_reason",
   "menopause_age",
+  "postmenopausal_bleeding_menstrual",
   "visited_gynecologist",
   "gynecologist_reason",
   "gynecologist_other_reason",

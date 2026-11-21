@@ -2,6 +2,8 @@ export const womensHealthInitialValues = {
   patientId: "",
 
   // ── Menstrual History ──────────────────────────────
+  menopause_attained: "",
+
   menarche_age: "",
 
   period_regularity: "",
@@ -19,6 +21,8 @@ export const womensHealthInitialValues = {
   sexually_inactive_reason: "",
 
   menopause_age: "",
+
+  postmenopausal_bleeding_menstrual: "",
 
   // ── Gynecologic History ────────────────────────────
   visited_gynecologist: "",

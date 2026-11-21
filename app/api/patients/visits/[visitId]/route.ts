@@ -144,7 +144,7 @@ export async function PUT(
     if (
       error instanceof Error &&
       (error.message === "Only PDF, JPG and PNG files are allowed." ||
-        error.message === "File size must not exceed 5 MB.")
+        error.message === "File size must not exceed 40 MB.")
     ) {
       return NextResponse.json(
         { success: false, message: error.message },

@@ -29,7 +29,8 @@ import {
 } from "./womensHealthQuestions";
 
 // =====================================
-// Combine all main fields in one flat list
+// Combine all fields in one flat list
+// (showWhen on each field drives visibility — no in-component detection needed)
 // =====================================
 
 const allFields = [
@@ -42,6 +43,7 @@ const allFields = [
   ...bloodCountFields,
   ...preventiveHealthFields,
   ...alarmingSignsFields,
+  ...postmenopausalChecklistFields,
 ] as const;
 
 // =====================================
@@ -104,15 +106,6 @@ export default function WomensHealthForm({
   useEffect(() => {
     isPatientValidRef.current = isPatientValid;
   }, [isPatientValid]);
-
-  // =====================================
-  // Postmenopausal Detection
-  // =====================================
-
-  const isPostmenopausal =
-    (formik.values.menopause_age !== "" &&
-      formik.values.menopause_age !== "0") ||
-    formik.values.menses_frequency === "Not applicable / Postmenopausal";
 
   // =====================================
   // Submit
@@ -260,18 +253,6 @@ export default function WomensHealthForm({
         ================================= */}
 
         <FormGrid fields={allFields as any} formik={formik} />
-
-        {/* ================================
-            POSTMENOPAUSAL CHECKLIST
-            (shown only when postmenopausal)
-        ================================= */}
-
-        {isPostmenopausal && (
-          <FormGrid
-            fields={postmenopausalChecklistFields as any}
-            formik={formik}
-          />
-        )}
 
         {/* ================================
             SAVE BUTTON

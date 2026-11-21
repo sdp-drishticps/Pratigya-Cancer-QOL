@@ -3,7 +3,7 @@ export const financialWellnessQuestions = [
     number: 1,
     name: "treatmentCareExpensesAffordable",
     question:
-      "Have you felt that you and your family have enough money to meet your treatment and care expenses?",
+      "Do you and your family experience difficulty in meeting the expenses related to your treatment and care?",
   },
   {
     number: 2,
@@ -27,7 +27,7 @@ export const financialWellnessQuestions = [
     number: 5,
     name: "governmentSupportScheme",
     question:
-      "Did you avail the benefit of any Govt. support / scheme for your treatment?",
+      "Have you faced any difficulty in accessing or availing government support or schemes for your treatment?",
   },
   {
     number: 6,
